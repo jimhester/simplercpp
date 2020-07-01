@@ -1,27 +1,12 @@
-#include <Rcpp.h>
-using namespace Rcpp;
+#include <cpp11/doubles.hpp>
+using namespace cpp11;
 
-
-//' Add 2 numeric vectors
-//'
-//' @param x,y numeric vectors
-//'
-//' @return numeric vector
-//'
-// [[Rcpp::export]]
-NumericVector add_rcpp(NumericVector x, NumericVector y) {
-  return(x + y);
+[[cpp11::register]]
+double add_cpp11(double x, double y) {
+  return x + y;
 }
 
-
-
-//' Multiply 2 numeric vectors
-//'
-//' @param x,y numeric vectors
-//'
-//' @return numeric vector
-//'
-// [[Rcpp::export]]
-NumericVector mul_rcpp(NumericVector x, NumericVector y) {
-  return(x * y);
+[[cpp11::register]]
+double mul_cpp11(double x, double y) {
+  return x * y;
 }
